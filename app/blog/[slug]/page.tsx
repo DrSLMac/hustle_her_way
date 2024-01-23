@@ -6,7 +6,7 @@ import React from "react";
 
 async function getData(slug: string) {
   const query = `
-    *[_type == "blog" && slug.current == '${slug}'] {
+    *[_type == "blog" && slug.current == "${slug}"] {
         "currentSlug": slug.current,
           title,
           content,
@@ -22,7 +22,7 @@ export default async function BlogArticle({
   params: { slug: string };
 }) {
   const data: fullBlog = await getData(params.slug);
-console.log("data::::: ", data.content[0].children)
+
   return (
     <div className="mt-8">
       <h1>
