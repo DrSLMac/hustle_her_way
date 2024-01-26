@@ -2,6 +2,7 @@ import { fullBlog } from "@/app/lib/interface";
 import { client, urlFor } from "@/app/lib/sanity";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export const revalidate = 30 
@@ -27,6 +28,10 @@ export default async function BlogArticle({
 
   return (
     <div className="mt-8">
+           <Link href="/articles" className="font-bold text-3xl">
+        Hustle<span className="text-primary">Her</span>Way
+        <span className="text-rose-900">Blog</span>
+      </Link>
       <h1>
         <span className="block text-base text-center text-primary font-semibold tracking-wide uppercase">
           A Hustler&apos;s Blog

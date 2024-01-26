@@ -3,6 +3,7 @@ import { Livvic } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import { ThemeProvider } from "./components/theme-provider";
+import { cn } from "@/lib/utils";
 
 const livvic = Livvic({
   weight: ["100", "200", "300", "400", "500", "600", "700", "900"],
@@ -18,7 +19,7 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={livvic.className}>
+      <body className={cn(livvic.className, "bg-background")}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -26,7 +27,7 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
           disableTransitionOnChange
         >
           <Navbar />
-          <main className="max-w-2xl mx-auto px-4 py-5">{children}</main>
+          <main className="w-full mx-auto px-4 py-5">{children}</main>
         </ThemeProvider>
       </body>
     </html>

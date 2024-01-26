@@ -6,22 +6,29 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 142.1 76.2% 36.3%;
-    --primary-foreground: 355.7 100% 97.3%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
+    --background: 40, 37%, 97%, 1; /* baby powder */
+    /* --foreground: 240 10% 3.9%; */
+    --card: 39, 26%, 89%, 1; /* alabaster */
+    --card-foreground: 209, 52%, 14%, 1; /* prussian-blue */
+
+    --popover: 60, 12%, 60%, 1; /* sage */
+    --popover-foreground: 209, 52%, 14%, 1; /* prussian-blue */
+
+    --primary: 209, 52%, 14%, 1; /* prussian-blue */
+    --primary-foreground: 209, 44%, 24%, 1; /* indigo-dye */
+
+    --secondary: 94, 18%, 37%, 1; /* reseda green */
+    --secondary-foreground: 60, 12%, 60%, 1;  /* sage */
+
     --muted: 240 4.8% 95.9%;
     --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+
+    --accent: 26, 100%, 92%, 1; /* champaign pink */
+    --accent-foreground: 24, 43%, 76%, 1; /* desert-sand */
+
+    --destructive: 8, 49%, 51%, 1; /* jasper */
+    --destructive-foreground: 21, 43%, 65%, 1; /* buff */
+
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
     --ring: 142.1 76.2% 36.3%;
@@ -29,16 +36,16 @@
   }
 
   .dark {
-    --background: 20 14.3% 4.1%;
-    --foreground: 0 0% 95%;
-    --card: 24 9.8% 10%;
-    --card-foreground: 0 0% 95%;
+    --background: 209, 51%, 14%, 1;
+    /* --foreground: 0 0% 95%; */
+    --card: 60, 12%, 60%, 1;
+    --card-foreground: 209, 52%, 14%, 1;
     --popover: 0 0% 9%;
     --popover-foreground: 0 0% 95%;
-    --primary: 142.1 70.6% 45.3%;
-    --primary-foreground: 144.9 80.4% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
+    --primary: 40, 37%, 97%, 1;
+    --primary-foreground: 0,72.2%,50.6%;
+    --secondary: 94, 18%, 37%, 1; 
+    --secondary-foreground: 39, 26%, 89%, 1;
     --muted: 0 0% 15%;
     --muted-foreground: 240 5% 64.9%;
     --accent: 12 6.5% 15.1%;
@@ -50,3 +57,43 @@
     --ring: 142.4 71.8% 29.2%;
   }
 }
+
+/* --baby-powder: hsla(40, 37%, 97%, 1);
+--reseda-green: hsla(94, 18%, 37%, 1);
+--indigo-dye: hsla(209, 44%, 24%, 1);
+--prussian-blue: hsla(209, 52%, 14%, 1);
+--alabaster: hsla(39, 26%, 89%, 1);
+--desert-sand: hsla(24, 43%, 76%, 1);
+--buff: hsla(21, 43%, 65%, 1);
+--sage: hsla(60, 12%, 60%, 1);
+--jasper: hsla(8, 49%, 51%, 1);
+--champagne-pink: hsla(26, 100%, 92%, 1); */
+
+
+
+/* Button background ==> secondary (reseda-green) */
+/* Text on button ==> secondary-foreground (alabaster) */
+/* Card background ==> sage */
+/* Text on card ==> card-foreground (prussian = primary) */
+
+
+
+/* --baby-powder: hsla(40, 37%, 97%, 1);
+--reseda-green: hsla(94, 18%, 37%, 1);
+--indigo-dye: hsla(209, 44%, 24%, 1);
+--prussian-blue: hsla(209, 52%, 14%, 1);
+--ash-gray: hsla(60, 12%, 68%, 1);
+--desert-sand: hsla(24, 43%, 76%, 1);
+--buff: hsla(21, 43%, 65%, 1);
+--sage: hsla(60, 12%, 60%, 1);
+--jasper: hsla(8, 49%, 51%, 1);
+--champagne-pink: hsla(26, 100%, 92%, 1); */
+
+/* --prussian-blue: hsla(209, 51%, 14%, 1);
+--indigo-dye: hsla(209, 44%, 24%, 1);
+--reseda-green: hsla(94, 18%, 37%, 1);
+--asparagus: hsla(95, 25%, 48%, 1);
+--jasper: hsla(8, 49%, 51%, 1);
+--bittersweet: hsla(9, 67%, 64%, 1);
+--alabaster: hsla(39, 26%, 89%, 1);
+--isabelline: hsla(34, 41%, 97%, 1); */

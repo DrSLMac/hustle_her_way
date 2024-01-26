@@ -1,3 +1,10 @@
+export interface homepage {
+    title: string;
+    smallDescription: string;
+    titleImage: any;
+    content: any;
+}
+
 export interface simpleBlogCard {
     title: string;
     smallDescription: string;

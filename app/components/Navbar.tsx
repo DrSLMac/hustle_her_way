@@ -4,14 +4,26 @@ import { ModeToggle } from './ModeToggle'
 
 const Navbar = () => {
   return (
-    <nav className='w-full relative flex items-center justify-between max-w-2xl mx-auto px-4 py-5'>
-        {/* <h1>Hustle Her Way Blog</h1>
-        <div>icons and toggle switch go here</div> */}
-        <Link
-            href="/"
-            className='font-bold text-3xl'
-        >
-            Hustle<span className='text-primary'>Her</span>Way<span className='text-rose-900'>Blog</span>
+    <nav className='max-w-5xl relative flex items-center justify-between mx-auto py-5 bg-background text-primary'>
+    
+
+        <Link href="/">
+          Home
+        </Link>
+        <Link href="/about">
+          About
+        </Link>
+        <Link href="/articles">
+          Articles
+        </Link>
+        <Link href="/freebies">
+          Freebies
+        </Link>
+        <Link href="/shop">
+          Shop
+        </Link>
+        <Link href="/contact">
+          Contact
         </Link>
         <ModeToggle/>
     </nav>

@@ -19,9 +19,6 @@ export function ModeToggle() {
     return currentTheme === "light" ? "dark" : "light";
   };
 
-  // console.log("currentTheme: ", currentTheme);
-  // console.log("toggleTheme: ", toggleTheme());
-
   return (
     <Button
       variant="outline"
