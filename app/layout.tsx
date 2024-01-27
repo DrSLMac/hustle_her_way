@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import { ThemeProvider } from "./components/theme-provider";
 import { cn } from "@/lib/utils";
+import { client } from "./lib/sanity";
+import { homepage } from "./lib/interface";
 
 const livvic = Livvic({
   weight: ["100", "200", "300", "400", "500", "600", "700", "900"],
@@ -15,7 +17,25 @@ export const metadata: Metadata = {
   description: "A Hustlers Guide ",
 };
 
-export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
+async function getData() {
+  const query = `
+  *[_type == 'homepage'] {
+    title,
+      smallDescription,
+      "titleImage": titleImage.asset, 
+      content
+  }[0]`;
+
+  const data = await client.fetch(query);
+
+  return data;
+}
+
+export default async function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
+  const data: homepage = await getData();
+
+  // console.log("data: ", data.title);
+  console.log("data: ", data.titleImage);
 
   return (
     <html lang="en" suppressHydrationWarning>
@@ -26,7 +46,7 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
+          <Navbar title={data.title} logo={data.titleImage}/>
           <main className="w-full mx-auto px-4 py-5">{children}</main>
         </ThemeProvider>
       </body>
