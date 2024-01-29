@@ -8,13 +8,12 @@ import { Allura } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { productDetails } from "../lib/interface";
 import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
-  } from "@/components/ui/carousel"
-  
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const allura = Allura({
   weight: ["400"],
@@ -57,46 +56,32 @@ export default async function ProductPreview() {
 
       <div className="flex justify-around">
         <div className="grid grid-cols-3 gap-3">
-    
-        <Carousel>
-  <CarouselContent>
-    {/* <CarouselItem>...</CarouselItem>
-    <CarouselItem>...</CarouselItem>
-    <CarouselItem>...</CarouselItem> */}
-            {data.map((product, idx) => (
-                <CarouselItem key={idx}>
-                <Card  className="lg:max-w-32">
-                    <Image
-                    priority
-                    src={urlFor(product.productImage).url()}
-                    alt="image"
-                    width={500}
-                    height={500}
-                    className="rounded-t-lg h-[200px] object-cover bg-secondary-foreground"
-                    />
-                    <CardContent className="mt-1">
-                    <h3 className="text-sm">{product.title}</h3>
-                    <p className="line-clamp-3 text-sm mt-1 ">
-                    Description about the product being sold
-                    </p>
-                    <Button
-                        asChild
-                        className="w-full mt-4 bg-secondary text-accent  text-sm"
-                    >
-                        <Link href={`/articles/${product.currentSlug}`}>
-                        Read More
-                        </Link>
-                    </Button>
-                    </CardContent>
-                </Card>
-                </CarouselItem>
-            ))}
-  </CarouselContent>
-  <CarouselPrevious />
-  <CarouselNext />
-</Carousel>
-
-
+          {data.map((product, idx) => (
+            <Card key={idx} className="lg:max-w-32">
+              <Image
+                priority
+                src={urlFor(product.productImage).url()}
+                alt="image"
+                width={500}
+                height={500}
+                className="rounded-t-lg h-[200px] object-cover bg-secondary-foreground"
+              />
+              <CardContent className="mt-1">
+                <h3 className="text-sm">{product.title}</h3>
+                <p className="line-clamp-3 text-sm mt-1 ">
+                  Description about the product being sold
+                </p>
+                <Button
+                  asChild
+                  className="w-full mt-4 bg-secondary text-accent  text-sm"
+                >
+                  <Link href={`/articles/${product.currentSlug}`}>
+                    Read More
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </div>
     </div>

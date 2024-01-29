@@ -3,42 +3,48 @@ import React from "react";
 import { ModeToggle } from "./ModeToggle";
 import Image from "next/image";
 import { urlFor } from "../lib/sanity";
-import { homepage } from "../lib/interface";
 import SearchBar from "./SearchBar";
 import { Allura } from "next/font/google";
 import { cn } from "@/lib/utils";
+import MobileMenu from "./MobileMenu";
+import HHW_Logo from '../HHW-Logo.png'
 
 const allura = Allura({
   weight: ["400"],
   style: ["normal"],
-  subsets: ["latin"]
+  subsets: ["latin"],
 });
 
 const Navbar = (params: any) => {
+  const logo = params.logo;
 
-const logo = params.logo
- 
   return (
-    <nav className="max-w-5xl relative flex md:justify-around items-center  mx-auto pt-5 bg-background text-primary">
-      <div className="flex items-center">
-        <div className="-ml-4">
-          <Image
-            priority
-            src={urlFor(logo).url()}
-            alt="image"
-            width={150}
-            height={300}
-            className="rounded-lg dark:bg-primary"
-          />
+    <nav className="max-w-5xl relative flex justify-around mx-auto pt-5 bg-background text-primary">
+      <Link href="/">
+        <div className="flex items-center">
+          <div className=" md:-ml-4">
+            <Image
+              priority
+              src={HHW_Logo}
+              alt="image"
+              // width={150}
+              // height={300}
+              sizes="150vw"
+              className="w-28 h-auto rounded-lg dark:bg-primary"
+            />
+          </div>
+          <div className="flex flex-col items-center ml-2 text-primary">
+            <h1 className={cn(allura.className, "bg-background text-6xl")}>
+              H<span>ustle</span>
+            </h1>
+            <h2 className="text-lg tracking-widest -mt-2">HER WAY HUB</h2>
+          </div>
         </div>
-        <div className="flex flex-col items-center ml-2 text-primary">
-          <h1 className={cn(allura.className, "bg-background text-6xl")}>
-            H<span>ustle</span>
-          </h1>
-          <h2 className="text-lg tracking-widest -mt-2">HER WAY HUB</h2>
-        </div>
-      </div>
-      <div>
+      </Link>
+
+      <MobileMenu />
+
+      <div className="hidden">
         <div className="flex items-center justify-end space-x-8">
           <SearchBar />
           <ModeToggle />
