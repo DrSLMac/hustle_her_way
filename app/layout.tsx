@@ -34,9 +34,6 @@ async function getData() {
 export default async function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
   const data: homepage = await getData();
 
-  // console.log("data: ", data.title);
-  console.log("data: ", data.titleImage);
-
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={cn(livvic.className, "bg-background")}>
@@ -47,7 +44,7 @@ export default async function RootLayout({children}: Readonly<{children: React.R
           disableTransitionOnChange
         >
           <Navbar title={data.title} logo={data.titleImage}/>
-          <main className="w-full mx-auto px-4 py-5">{children}</main>
+          <main className="w-full mx-auto px-4 mt-4">{children}</main>
         </ThemeProvider>
       </body>
     </html>

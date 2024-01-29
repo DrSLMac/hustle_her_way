@@ -21,10 +21,8 @@ async function getData() {
   return data;
 }
 
-export default async function Home() {
+export default async function Blog() {
   const data: simpleBlogCard[] = await getData();
-
-  console.log("data: ", data[1]);
 
   return (
     <div className="max-w-5xl mx-auto">

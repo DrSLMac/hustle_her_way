@@ -4,6 +4,9 @@ import { client, urlFor } from "./lib/sanity";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Welcome from "./components/Welcome";
+import ArticlePreview from "./components/ArticlePreview";
+import ProductPreview from "./components/ProductPreview";
 
 export const revalidate = 30
 
@@ -28,7 +31,13 @@ export default async function Home() {
 
   return (
     <div>
-      <h1>{data.title}</h1>
+      <div className="grid md:grid-cols-2 gap-8">
+        <div className="lg:ml-8">
+          <Welcome />
+          <ProductPreview />
+        </div>
+        <ArticlePreview />
+      </div>
      
     </div>
   );

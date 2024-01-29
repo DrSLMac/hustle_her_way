@@ -18,3 +18,13 @@ export interface fullBlog {
     content: any;
     titleImage: any;
 }
+
+export interface productDetails {
+    title: string;
+    productDescription: string;
+    price: string;
+    featured: boolean;
+    content: any;
+    productImage: any;
+    currentSlug: string;
+}

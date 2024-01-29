@@ -14,11 +14,14 @@ const allura = Allura({
   subsets: ["latin"]
 });
 
-const Navbar = ({ title, logo }) => {
+const Navbar = (params: any) => {
+
+const logo = params.logo
+ 
   return (
-    <nav className="max-w-5xl relative flex md:justify-around items-center  mx-auto py-5 bg-background text-primary">
+    <nav className="max-w-5xl relative flex md:justify-around items-center  mx-auto pt-5 bg-background text-primary">
       <div className="flex items-center">
-        <div>
+        <div className="-ml-4">
           <Image
             priority
             src={urlFor(logo).url()}
@@ -28,11 +31,11 @@ const Navbar = ({ title, logo }) => {
             className="rounded-lg dark:bg-primary"
           />
         </div>
-        <div>
-          <h1 className={cn(allura.className, "bg-background")}>
+        <div className="flex flex-col items-center ml-2 text-primary">
+          <h1 className={cn(allura.className, "bg-background text-6xl")}>
             H<span>ustle</span>
           </h1>
-          <h2>HER WAY HUB</h2>
+          <h2 className="text-lg tracking-widest -mt-2">HER WAY HUB</h2>
         </div>
       </div>
       <div>
