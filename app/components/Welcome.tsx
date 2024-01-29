@@ -14,7 +14,7 @@ const Welcome = () => {
       <h1 className={cn(allura.className, "text-4xl ")}>Welcome!</h1>
       <p>
         The Hustle Her Way Hub is here to share discoveries, lessons learned,
-        things we love, and things we'd love to change. These are life
+        things we love, and things we&apos;d love to change. These are life
         lessons that every woman should know. This is a not a place for judgment
         or discouragement, but rather a place where women can find answers and
         have honest conversations about real topics. I hope that this is a great
@@ -27,7 +27,7 @@ const Welcome = () => {
         shop for digital printables, workbooks, and more.
       </p>
       <br/>
-      <p>I'm so glad you are here!</p>
+      <p>I&apos;m so glad you are here!</p>
     </div>
   );
 };

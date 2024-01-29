@@ -64,8 +64,8 @@ export default async function ProductPreview() {
     <CarouselItem>...</CarouselItem>
     <CarouselItem>...</CarouselItem> */}
             {data.map((product, idx) => (
-                <CarouselItem>
-                <Card key={idx} className="lg:max-w-32">
+                <CarouselItem key={idx}>
+                <Card  className="lg:max-w-32">
                     <Image
                     priority
                     src={urlFor(product.productImage).url()}
