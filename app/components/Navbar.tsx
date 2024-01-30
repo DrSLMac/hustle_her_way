@@ -22,7 +22,7 @@ const Navbar = (params: any) => {
     <nav className="max-w-5xl relative flex justify-around mx-auto pt-5 bg-background text-primary">
       <Link href="/">
         <div className="flex items-center">
-          <div className=" md:-ml-4">
+          <div className="pl-8 md:-ml-4">
             <Image
               priority
               src={HHW_Logo}

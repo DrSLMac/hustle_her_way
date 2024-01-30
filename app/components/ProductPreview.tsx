@@ -41,7 +41,7 @@ async function getData() {
 
 export default async function ProductPreview() {
   const data: productDetails[] = await getData();
-  console.log("data: ", data);
+//   console.log("data: ", data);
 
   return (
     <div className="mt-2">
