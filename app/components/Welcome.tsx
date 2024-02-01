@@ -10,7 +10,7 @@ const allura = Allura({
 
 const Welcome = () => {
   return (
-    <div className="bg-card rounded-lg p-8 text-primary border border-secondary-foreground">
+    <div className="bg-card rounded-lg p-4 text-primary border border-secondary-foreground">
       <h1 className={cn(allura.className, "text-4xl ")}>Welcome!</h1>
       <p>
         The Hustle Her Way Hub is here to share discoveries, lessons learned,

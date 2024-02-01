@@ -41,49 +41,66 @@ async function getData() {
 
 export default async function ProductPreview() {
   const data: productDetails[] = await getData();
-//   console.log("data: ", data);
+  const filteredData = data.filter((product) => {
+    return product.featured === true;
+  });
+
+  console.log("filteredData: ", filteredData);
 
   return (
-    <div className="mt-2">
+    <div className="mt-6">
       <h1
         className={cn(
           allura.className,
-          "text-4xl border-b-4 border-b-secondary mb-2 px-1"
+          "text-4xl border-b-2 border-b-secondary mb-2 px-1"
         )}
       >
         Featured Products...
       </h1>
 
-      <div className="flex justify-around">
-        <div className="grid grid-cols-3 gap-3">
-          {data.map((product, idx) => (
-            <Card key={idx} className="lg:max-w-32">
+      <div className="">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+          {filteredData.map((product, idx) => (
+            <Card
+              key={idx}
+              className=" lg:max-w-32 h-96 flex flex-col justify-content bg-transparent border-none"
+            >
               <Image
                 priority
                 src={urlFor(product.productImage).url()}
                 alt="image"
                 width={500}
                 height={500}
-                className="rounded-t-lg h-[200px] object-cover bg-secondary-foreground"
+                className="rounded-t-lg h-[200px] object-contain p-1"
               />
-              <CardContent className="mt-1">
-                <h3 className="text-sm">{product.title}</h3>
-                <p className="line-clamp-3 text-sm mt-1 ">
-                  Description about the product being sold
-                </p>
-                <Button
-                  asChild
-                  className="w-full mt-4 bg-secondary text-accent  text-sm"
-                >
-                  <Link href={`/articles/${product.currentSlug}`}>
-                    Read More
-                  </Link>
-                </Button>
-              </CardContent>
+              <div className="flex h-48">
+                <CardContent className="mt-1 px-2 flex flex-col justify-between">
+                  <h3 className="text-xl text-center font-semibold">
+                    {product.title}
+                  </h3>
+                  <div>
+                    <h3>{`$${product.price}`}</h3>
+                    <Button
+                      asChild
+                      className="w-full mt-2 text-accent text-base text-wrap text-center"
+                    >
+                      <Link href={`/shop/${product.currentSlug}`}>
+                        See Details
+                      </Link>
+                    </Button>
+                  </div>
+                </CardContent>
+              </div>
             </Card>
           ))}
         </div>
       </div>
+      <Button
+        asChild
+        className="w-full bg-secondary text-accent  text-sm text-wrap text-center"
+      >
+        <Link href="/shop">View More →</Link>
+      </Button>
     </div>
   );
 }

@@ -31,7 +31,7 @@ export default async function Home() {
 
   return (
     <div>
-      <div className="grid md:grid-cols-2 gap-8">
+      <div className="grid md:grid-cols-2">
         <div className="lg:ml-8">
           <Welcome />
           <ProductPreview />
