@@ -10,22 +10,21 @@ const allura = Allura({
 
 const Welcome = () => {
   return (
-    <div className="bg-card rounded-lg p-4 text-primary border border-secondary-foreground">
-      <h1 className={cn(allura.className, "text-4xl ")}>Welcome!</h1>
+    <div className="bg-card rounded-lg p-4 text-primary border border-secondary-foreground leading-7 text-lg">
+      <h1 className={cn(allura.className, "text-5xl ")}>Welcome!</h1>
       <p>
         The Hustle Her Way Hub is here to share discoveries, lessons learned,
-        things we love, and things we&apos;d love to change. These are life
-        lessons that every woman should know. This is a not a place for judgment
-        or discouragement, but rather a place where women can find answers and
-        have honest conversations about real topics. I hope that this is a great
-        source of help and hope for you, no matter what stage of life you are
-        in.
+        things we love, and things we&apos;d love to change. I hope that this is
+        a great source of help and hope for you, no matter what stage of life
+        you are in.
       </p>
-      <br/>
+      <br />
       <p>
         Spend some time checking out the articles, as well as the freebies and
         shop for digital printables, workbooks, and more.
       </p>
+      <br />
+      <p>Be sure to sign up to receive updates and newsletters.</p>
       <br/>
       <p>I&apos;m so glad you are here!</p>
     </div>

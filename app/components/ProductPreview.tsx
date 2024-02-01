@@ -45,8 +45,6 @@ export default async function ProductPreview() {
     return product.featured === true;
   });
 
-  console.log("filteredData: ", filteredData);
-
   return (
     <div className="mt-6">
       <h1
