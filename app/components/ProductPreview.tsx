@@ -46,11 +46,11 @@ export default async function ProductPreview() {
   });
 
   return (
-    <div className="mt-6">
+    <div className="mt-8">
       <h1
         className={cn(
           allura.className,
-          "text-4xl border-b-2 border-b-secondary mb-2 px-1"
+          "text-4xl border-t border-t-secondary mb-2 px-1 pt-6"
         )}
       >
         Featured Products...
@@ -80,7 +80,7 @@ export default async function ProductPreview() {
                     <h3>{`$${product.price}`}</h3>
                     <Button
                       asChild
-                      className="w-full mt-2 text-accent text-base text-wrap text-center"
+                      className="w-full mt-2 text-accent text-base uppercase text-wrap text-center"
                     >
                       <Link href={`/shop/${product.currentSlug}`}>
                         See Details
@@ -95,7 +95,7 @@ export default async function ProductPreview() {
       </div>
       <Button
         asChild
-        className="w-full bg-secondary text-accent  text-sm text-wrap text-center"
+        className="w-full bg-secondary text-accent text-wrap text-center uppercase text-lg"
       >
         <Link href="/shop">View More →</Link>
       </Button>
