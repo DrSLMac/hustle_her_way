@@ -1,33 +1,27 @@
-import { Card, CardContent } from "@/components/ui/card";
 import { homepage } from "./lib/interface";
-import { client, urlFor } from "./lib/sanity";
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { client } from "./lib/sanity";
 import Welcome from "./components/Welcome";
 import ArticlePreview from "./components/ArticlePreview";
-import ProductPreview from "./components/ProductPreview";
+import ProductPreview from "./components/productPreview/ProductPreview";
 
-export const revalidate = 30
+// export const revalidate = 30
 
-async function getData() {
-  const query = `
-  *[_type == 'homepage'] {
-    title,
-      smallDescription,
-      "titleImage": titleImage.asset, 
-      content
-  }[0]`;
+// async function getData() {
+//   const query = `
+//   *[_type == 'homepage'] {
+//     title,
+//       smallDescription,
+//       "titleImage": titleImage.asset,
+//       content
+//   }[0]`;
 
-  const data = await client.fetch(query);
+//   const data = await client.fetch(query);
 
-  return data;
-}
+//   return data;
+// }
 
 export default async function Home() {
-  const data: homepage = await getData();
-
-  
+  // const data: homepage = await getData();
 
   return (
     <div>
@@ -38,21 +32,20 @@ export default async function Home() {
         </div>
         <ArticlePreview />
       </div>
-     
     </div>
   );
 }
 
 // {data.map((post, idx) => (
 //   <Card key={idx}>
-    // <Image
-    //   priority
-    //   src={urlFor(post.titleImage).url()}
-    //   alt="image"
-    //   width={500}
-    //   height={500}
-    //   className="rounded-t-lg h-[200px] object-cover dark:bg-rose-50"
-    //   />
+// <Image
+//   priority
+//   src={urlFor(post.titleImage).url()}
+//   alt="image"
+//   width={500}
+//   height={500}
+//   className="rounded-t-lg h-[200px] object-cover dark:bg-rose-50"
+//   />
 //     <CardContent className="mt-5">
 //       <h3 className="text-lg line-clamp-2 font-bold">{post.title}</h3>
 //       <p className="line-clamp-3 text-sm mt-2 text-gray-600 dark:text-gray-300">{post.smallDescription}</p>

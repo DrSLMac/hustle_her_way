@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { client } from "./lib/sanity";
 import { homepage } from "./lib/interface";
 
+
 const livvic = Livvic({
   weight: ["100", "200", "300", "400", "500", "600", "700", "900"],
   subsets: ["latin"],
@@ -45,6 +46,7 @@ export default async function RootLayout({children}: Readonly<{children: React.R
         >
           <Navbar title={data.title} logo={data.titleImage}/>
           <main className="w-full mx-auto px-4 mt-4">{children}</main>
+
         </ThemeProvider>
       </body>
     </html>

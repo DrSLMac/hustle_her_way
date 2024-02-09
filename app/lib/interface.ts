@@ -21,10 +21,11 @@ export interface fullBlog {
 
 export interface productDetails {
     title: string;
-    productDescription: string;
-    price: string;
-    featured: boolean;
-    content: any;
+    productDescription?: string;
+    price: number;
+    featured?: boolean;
+    content?: any;
     productImage: any;
+    hoverImage?: any;
     currentSlug: string;
 }

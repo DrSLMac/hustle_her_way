@@ -11,6 +11,10 @@ const menuItems = [
         href: '/about'
     }, 
     {
+        name: 'Articles',
+        href: '/articles'
+    }, 
+    {
         name: 'Freebies',
         href: '/freebies'
     }, 
@@ -28,7 +32,7 @@ export function Menu({ toggle, isOpen }: any) {
     return (
       <nav 
         className={cn( 
-            !isOpen ? "hidden" : "visible", 
+            // !isOpen ? "hidden" : "visible", 
         "fixed top-0 right-0 bottom-0 w-[90%] bg-[#5c6f4d] opacity-95 p-10")}
         >
         <ul className="flex flex-col gap-6 p-6 mt-8">

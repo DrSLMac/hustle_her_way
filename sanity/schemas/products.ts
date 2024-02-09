@@ -22,6 +22,11 @@ export default {
             title: 'Product Image',
         },
         {
+            name: 'hoverImage',
+            type: 'image',
+            title: 'Hover Image',
+        },
+        {
             name: 'productDescription',
             type: 'text',
             title: 'Product Description',

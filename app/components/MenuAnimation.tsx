@@ -44,7 +44,7 @@ function useMenuAnimation(isOpen: boolean) {
       ],
       ...menuAnimations,
     ]);
-  }, [isOpen]);
+  }, [isOpen, animate]);
 
   return scope;
 }
@@ -55,7 +55,7 @@ export default function MenuAnimation() {
 
   return (
     <div ref={scope} className="md:hidden">
-      <Menu toggle={() => setIsOpen(!isOpen)} isOpen={isOpen}/>
+      <Menu toggle={() => setIsOpen(!isOpen)}/>
       <MenuToggle toggle={() => setIsOpen(!isOpen)} />
     </div>
   );
