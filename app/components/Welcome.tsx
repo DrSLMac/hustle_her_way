@@ -1,4 +1,5 @@
-import React from "react";
+'use client'
+import React, { useState } from "react";
 import { Allura } from "next/font/google";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
@@ -12,10 +13,16 @@ const allura = Allura({
 });
 
 const Welcome = () => {
+  const [userInput, setUserInput] = useState("")
+
+  const handleChange = () => {
+
+  }
+
   return (
     <div>
-      <div className="bg-card rounded-lg p-4 text-primary border border-secondary-foreground leading-7 text-lg">
-        <h1 className={cn(allura.className, "text-5xl ")}>Welcome!</h1>
+      <div className="bg-card rounded-md p-4 text-primary border border-secondary-foreground leading-6">
+        <h1 className={cn(allura.className, "text-4xl ")}>Welcome!</h1>
         <p>
           The Hustle Her Way Hub is here to share discoveries, lessons learned,
           things we love, and things we&apos;d love to change. I hope that this
@@ -29,18 +36,29 @@ const Welcome = () => {
         </p>
         <br />
         <p>Be sure to sign up to receive updates and newsletters.</p>
+        <form>
+          <input 
+            type="email"
+            placeholder="Enter your email address"
+            className="rounded-sm text-sm w-full p-2 mt-1"
+            value=""
+          />
+          <Button>
+            Sign up to receive emails
+          </Button>
+        </form>
         <br />
         <p>I&apos;m so glad you are here!</p>
-        <div className="mt-4 flex justify-around uppercase">
+        <div className="mt-4 flex justify-around ">
           <Link href="/articles">
-            <Button className="gap-x-2 text-accent text-lg uppercase">
+            <Button className="px-1 gap-x-2 text-accent text-base uppercase hover:bg-secondary-foreground ">
               <div>Articles</div>
               <MoveRight />
             </Button>
           </Link>
           <Link
             href="/"
-            className="flex items-center gap-x-2 text-secondary font-semibold cursor-pointer"
+            className="flex items-center gap-x-2 text-secondary font-semibold cursor-pointer uppercase text-base"
           >
             <div>View Shop</div>
             <div>
