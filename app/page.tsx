@@ -19,39 +19,22 @@ import ProductPreview from "./components/productPreview/ProductPreview";
 
 //   return data;
 // }
+import ProductPreview from "./components/ProductPreview";
+import ContactPreview from "./components/ContactPreview";
 
 export default async function Home() {
   // const data: homepage = await getData();
 
   return (
     <div>
-      <div className="grid md:grid-cols-2 gap-8">
+      <div className="grid md:grid-cols-2">
         <div className="lg:ml-8">
           <Welcome />
           <ProductPreview />
         </div>
         <ArticlePreview />
       </div>
+      <ContactPreview />
     </div>
   );
 }
-
-// {data.map((post, idx) => (
-//   <Card key={idx}>
-// <Image
-//   priority
-//   src={urlFor(post.titleImage).url()}
-//   alt="image"
-//   width={500}
-//   height={500}
-//   className="rounded-t-lg h-[200px] object-cover dark:bg-rose-50"
-//   />
-//     <CardContent className="mt-5">
-//       <h3 className="text-lg line-clamp-2 font-bold">{post.title}</h3>
-//       <p className="line-clamp-3 text-sm mt-2 text-gray-600 dark:text-gray-300">{post.smallDescription}</p>
-//       <Button asChild className="w-full mt-7">
-//         {/* <Link href={`/articles/${post.currentSlug}`}>Read More</Link> */}
-//       </Button>
-//     </CardContent>
-//   </Card>
-// ))}

@@ -29,6 +29,7 @@ const menuItems = [
 ]
 
 export function Menu({ toggle, isOpen }: any) {
+   
     return (
       <nav 
         className={cn( 

@@ -37,9 +37,9 @@ export default async function ArticlePreview() {
 
 
   return (
-    <div className="mx-auto text-primary lg:mr-8">
-       <h1 className={cn(allura.className, "text-4xl border-b-4 border-b-secondary mb-2 px-1")}>Recent Articles...</h1>
-      <div className="grid grid-cols-1 gap-5 mx-auto">
+    <div className="mx-auto text-primary mt-8 lg:mr-8">
+       <h1 className={cn(allura.className, "text-4xl border-t border-t-secondary pt-6 mb-2 px-1")}>Recent Articles...</h1>
+      <div className="grid grid-cols-1 gap-4 mx-auto">
       {data.map((post, idx) => (
         <Card key={idx} className="lg:max-w-[30rem] flex bg-card border-secondary-foreground h-48">
           <Image
@@ -50,7 +50,7 @@ export default async function ArticlePreview() {
             height={200}
             className="rounded-l-lg object-contain border border-r-secondary-foreground"
           />
-          <CardContent className="">
+          <CardContent className="pt-1 pb-2 px-3">
             <h3 className="text-lg tracking-wide line-clamp-2 font-bold">{post.title}</h3>
             <p className="line-clamp-3 text-base mt-2 ">
               {post.smallDescription}

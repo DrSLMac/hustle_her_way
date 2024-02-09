@@ -1,8 +1,22 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useAnimate, stagger } from "framer-motion";
 import { MenuToggle } from "./MenuToggle";
 import { Menu } from "./Menu";
+
+const useIsMounted = () => {
+  const isMounted = useRef<boolean>(false);
+
+  useEffect((): (() => void) => {
+    isMounted.current = true;
+
+    return () => {
+      isMounted.current = false;
+    };
+  }, []);
+
+  return isMounted;
+};
 
 function useMenuAnimation(isOpen: boolean) {
   const [scope, animate] = useAnimate();
@@ -52,6 +66,7 @@ function useMenuAnimation(isOpen: boolean) {
 export default function MenuAnimation() {
   const [isOpen, setIsOpen] = useState(false);
   const scope = useMenuAnimation(isOpen);
+  const isMounted = useIsMounted();
 
   return (
     <div ref={scope} className="md:hidden">

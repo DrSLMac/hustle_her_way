@@ -6,7 +6,7 @@ import { ThemeProvider } from "./components/theme-provider";
 import { cn } from "@/lib/utils";
 import { client } from "./lib/sanity";
 import { homepage } from "./lib/interface";
-
+import Footer from "./components/Footer";
 
 const livvic = Livvic({
   weight: ["100", "200", "300", "400", "500", "600", "700", "900"],
@@ -32,7 +32,9 @@ async function getData() {
   return data;
 }
 
-export default async function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
+export default async function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   const data: homepage = await getData();
 
   return (
@@ -44,16 +46,18 @@ export default async function RootLayout({children}: Readonly<{children: React.R
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar title={data.title} logo={data.titleImage}/>
-          <main className="w-full mx-auto px-4 mt-4">{children}</main>
-
+          <Navbar title={data.title} logo={data.titleImage} />
+          <main className="w-full mx-auto px-4 mt-4">
+            {children}
+            <Footer />
+          </main>
         </ThemeProvider>
       </body>
     </html>
   );
 }
 
-// 
+//
 
 // export default function RootLayout({ children }: RootLayoutProps) {
 //   return (
@@ -74,4 +78,3 @@ export default async function RootLayout({children}: Readonly<{children: React.R
 //     </>
 //   )
 // }
-
