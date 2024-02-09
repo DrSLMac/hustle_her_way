@@ -66,11 +66,10 @@ function useMenuAnimation(isOpen: boolean) {
 export default function MenuAnimation() {
   const [isOpen, setIsOpen] = useState(false);
   const scope = useMenuAnimation(isOpen);
-  const isMounted = useIsMounted();
 
   return (
-    <div ref={scope} className="md:hidden">
-      <Menu toggle={() => setIsOpen(!isOpen)}/>
+    <div ref={scope} className="md:hidden z-50">
+      <Menu toggle={() => setIsOpen(!isOpen)} isOpen={isOpen}/>
       <MenuToggle toggle={() => setIsOpen(!isOpen)} />
     </div>
   );
