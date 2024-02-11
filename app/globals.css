@@ -3,7 +3,6 @@
 @tailwind utilities;
  
 
-
 @layer base {
   :root {
     --background: 40, 37%, 97%, 1; /* baby powder */

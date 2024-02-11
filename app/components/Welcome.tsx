@@ -35,20 +35,22 @@ const Welcome = () => {
           shop for digital printables, workbooks, and more.
         </p>
         <br />
-        <p>Be sure to sign up to receive updates and newsletters.</p>
-        <form>
+        <p>Be sure to sign up to receive updates, new products, and newsletters.</p>
+        <form
+          className="flex flex-col justify-center space-y-4 mt-4 rounded-md"
+        >
           <input 
             type="email"
             placeholder="Enter your email address"
-            className="rounded-sm text-sm w-full p-2 mt-1"
-            value=""
+            className="rounded-md text-sm mobile:text-base w-full p-3"
           />
-          <Button>
+          <Button className="mx-10 p-2 rounded-lg bg-secondary text-accent uppercase ease-in-out duration-300">
             Sign up to receive emails
           </Button>
         </form>
         <br />
-        <p>I&apos;m so glad you are here!</p>
+        <p className="text-center">I&apos;m so glad you are here!</p>
+
         <div className="mt-4 flex justify-around ">
           <Link href="/articles">
             <Button className="px-1 gap-x-2 text-accent text-base uppercase hover:bg-secondary-foreground ">
@@ -66,6 +68,7 @@ const Welcome = () => {
             </div>
           </Link>
         </div>
+
       </div>
     </div>
   );
