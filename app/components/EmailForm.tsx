@@ -39,7 +39,7 @@ const EmailForm = () => {
 
   return (
     <form
-      onSubmit={handleSubmit}
+      // onSubmit={handleSubmit}
       className="flex flex-col justify-center space-y-4 my-4 rounded-md"
       method="post" 
       action="https://systeme.io/embedded/14686218/subscription"
@@ -54,10 +54,10 @@ const EmailForm = () => {
         type="text"
         name="email"
         placeholder="Enter your email address"
-        value={emailInput}
-        onChange={(e: ChangeEvent<HTMLInputElement>) =>
-          setEmailInput(e.target.value)
-        }
+        // value={emailInput}
+        // onChange={(e: ChangeEvent<HTMLInputElement>) =>
+        //   setEmailInput(e.target.value)
+        // }
         className="rounded-md text-sm mobile:text-base w-full p-3"
       />
     <Button
