@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { client } from "./lib/sanity";
 import { homepage } from "./lib/interface";
 import Footer from "./components/Footer";
+import { Toaster } from "@/components/ui/toaster";
 
 const livvic = Livvic({
   weight: ["100", "200", "300", "400", "500", "600", "700", "900"],
@@ -51,6 +52,7 @@ export default async function RootLayout({
             {children}
             <Footer />
           </main>
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

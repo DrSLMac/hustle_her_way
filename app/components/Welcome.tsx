@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { MoveRight } from "lucide-react";
+import EmailForm from "./EmailForm";
 
 const allura = Allura({
   weight: ["400"],
@@ -36,24 +37,17 @@ const Welcome = () => {
         </p>
         <br />
         <p>Be sure to sign up to receive updates, new products, and newsletters.</p>
-        <form
-          className="flex flex-col justify-center space-y-4 mt-4 rounded-md"
-        >
-          <input 
-            type="email"
-            placeholder="Enter your email address"
-            className="rounded-md text-sm mobile:text-base w-full p-3"
-          />
-          <Button className="mx-10 p-2 rounded-lg bg-secondary text-accent uppercase ease-in-out duration-300">
-            Sign up to receive emails
-          </Button>
-        </form>
-        <br />
+  
+        <EmailForm/>
         <p className="text-center">I&apos;m so glad you are here!</p>
 
         <div className="mt-4 flex justify-around ">
           <Link href="/articles">
-            <Button className="px-1 gap-x-2 text-accent text-base uppercase hover:bg-secondary-foreground ">
+            <Button
+              type="submit"
+              className="px-1 gap-x-2 text-accent text-base uppercase hover:bg-secondary-foreground "
+            
+            >
               <div>Articles</div>
               <MoveRight />
             </Button>
