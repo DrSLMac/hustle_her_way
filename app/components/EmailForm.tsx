@@ -38,35 +38,35 @@ const EmailForm = () => {
   };
 
   return (
-    // <form
-    //   onSubmit={handleSubmit}
-    //   className="flex flex-col justify-center space-y-4 my-4 rounded-md"
-    // >
-    //   <input
-    //     type="email"
-    //     placeholder="Enter your email address"
-    //     value={emailInput}
-    //     onChange={(e: ChangeEvent<HTMLInputElement>) =>
-    //       setEmailInput(e.target.value)
-    //     }
-    //     className="rounded-md text-sm mobile:text-base w-full p-3"
-    //   />
-
-
-    //   <Button
-    //     type="submit"
-    //     className="mx-10 p-2 rounded-lg bg-secondary text-accent uppercase ease-in-out duration-300"
-    //   >
-    //     Sign up to receive emails
-    //   </Button>
-    // </form>
-    <form method="post" action="https://systeme.io/embedded/14686218/subscription"> 
-    <input type="text" name="email" />
-<input type="text" name="first_name" />
-  <div className="f-row">
-    <button type="submit" className="btn">Subscribe</button>
-  </div>
-  </form>
+    <form
+      onSubmit={handleSubmit}
+      className="flex flex-col justify-center space-y-4 my-4 rounded-md"
+      method="post" 
+      action="https://systeme.io/embedded/14686218/subscription"
+    >
+      <input 
+        type="text" 
+        name="first_name" 
+        placeholder="Enter your first name"
+        className="rounded-md text-sm mobile:text-base w-full p-3"
+      />
+       <input
+        type="text"
+        name="email"
+        placeholder="Enter your email address"
+        value={emailInput}
+        onChange={(e: ChangeEvent<HTMLInputElement>) =>
+          setEmailInput(e.target.value)
+        }
+        className="rounded-md text-sm mobile:text-base w-full p-3"
+      />
+    <Button
+        type="submit"
+        className="mx-10 p-2 rounded-lg bg-secondary text-accent uppercase ease-in-out duration-300"
+      >
+        Sign up to receive emails
+      </Button>
+    </form>
   
   );
 };
