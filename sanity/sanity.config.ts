@@ -15,4 +15,12 @@ export default defineConfig({
   schema: {
     types: schemaTypes,
   },
+  // form: {
+  //   components: {
+  //     input: MyInput,
+  // 		field: MyField,
+  // 		item: MyItem,
+  // 		preview: MyPreview,
+  //   },
+  // },
 })
