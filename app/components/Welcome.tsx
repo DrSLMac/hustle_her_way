@@ -40,9 +40,9 @@ const Welcome = () => {
         <p>Be sure to sign up to receive updates, new products, and newsletters.</p>
   
         <EmailForm/>
-        <Popover>
+        {/* <Popover>
           
-        </Popover>
+        </Popover> */}
         <p className="text-center">I&apos;m so glad you are here!</p>
 
         <div className="mt-4 flex justify-around ">
