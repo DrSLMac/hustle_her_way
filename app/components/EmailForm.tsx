@@ -9,7 +9,7 @@ const EmailForm = () => {
   const [nameInput, setNameInput] = useState("");
   const { toast } = useToast();
 
- console.log("emailInput: ", emailInput)
+//  console.log("emailInput: ", emailInput)
 
 
   return (
