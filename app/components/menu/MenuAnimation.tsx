@@ -3,20 +3,21 @@ import { useState, useEffect, useRef } from "react";
 import { useAnimate, stagger } from "framer-motion";
 import { MenuToggle } from "./MenuToggle";
 import { Menu } from "./Menu";
+import { ModeToggle } from "../ModeToggle";
 
-const useIsMounted = () => {
-  const isMounted = useRef<boolean>(false);
+// const useIsMounted = () => {
+//   const isMounted = useRef<boolean>(false);
 
-  useEffect((): (() => void) => {
-    isMounted.current = true;
+//   useEffect((): (() => void) => {
+//     isMounted.current = true;
 
-    return () => {
-      isMounted.current = false;
-    };
-  }, []);
+//     return () => {
+//       isMounted.current = false;
+//     };
+//   }, []);
 
-  return isMounted;
-};
+//   return isMounted;
+// };
 
 function useMenuAnimation(isOpen: boolean) {
   const [scope, animate] = useAnimate();
@@ -69,8 +70,10 @@ export default function MenuAnimation() {
 
   return (
     <div ref={scope} className="md:hidden z-50">
-      <Menu toggle={() => setIsOpen(!isOpen)} isOpen={isOpen}/>
+      <Menu toggle={() => setIsOpen(!isOpen)} isOpen={isOpen} />
       <MenuToggle toggle={() => setIsOpen(!isOpen)} />
+      <ModeToggle  />
+
     </div>
   );
 }

@@ -8,10 +8,10 @@ import SearchBar from "./SearchBar";
 import { Allura } from "next/font/google";
 import { cn } from "@/lib/utils";
 // import MobileMenu from "./MobileMenu";
-import HHW_Logo from '../HHW-Logo.png'
-import { Menu } from "./Menu";
-import { MenuToggle } from "./MenuToggle";
-import MenuAnimation from "./MenuAnimation";
+import HHW_Logo from "../HHW-Logo.png";
+import { Menu } from "./menu/Menu";
+import { MenuToggle } from "./menu/MenuToggle";
+import MenuAnimation from "./menu/MenuAnimation";
 
 const allura = Allura({
   weight: ["400"],
@@ -24,7 +24,6 @@ const Navbar = (params: any) => {
 
   return (
     <nav className="max-w-5xl relative flex justify-around mx-auto pt-5 bg-background text-primary">
-
       <Link href="/">
         <div className="flex items-center">
           <div className="pl-8 md:-ml-4">
@@ -54,7 +53,7 @@ const Navbar = (params: any) => {
       <div className="hidden md:inline">
         <div className="flex items-center justify-end space-x-8">
           <SearchBar />
-          <ModeToggle />
+          <ModeToggle/>
         </div>
         <div className="hidden md:inline-flex md:space-x-6 px-6 text-lg">
           <Link href="/">Home</Link>
