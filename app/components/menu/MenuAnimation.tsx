@@ -72,8 +72,6 @@ export default function MenuAnimation() {
     <div ref={scope} className="md:hidden z-50">
       <Menu toggle={() => setIsOpen(!isOpen)} isOpen={isOpen} />
       <MenuToggle toggle={() => setIsOpen(!isOpen)} />
-      <ModeToggle  />
-
     </div>
   );
 }

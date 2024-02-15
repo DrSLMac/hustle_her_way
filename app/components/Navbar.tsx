@@ -23,21 +23,23 @@ const Navbar = (params: any) => {
   const logo = params.logo;
 
   return (
-    <nav className="max-w-5xl relative flex justify-around mx-auto pt-5 bg-background text-primary">
+    <nav className="max-w-5xl relative flex justify-between px-4 pt-5 bg-background text-primary">
+      <div className="md:hidden">
+
+          <ModeToggle />
+      </div>
       <Link href="/">
-        <div className="flex items-center">
-          <div className="pl-8 md:-ml-4">
+        <div className="flex items-center -ml-20 md:ml-0">
+          <div className=" ">
             <Image
               priority
               src={HHW_Logo}
               alt="image"
-              // width={150}
-              // height={300}
               sizes="150vw"
-              className="w-28 h-auto rounded-lg dark:bg-primary"
+              className="w-28 h-auto rounded-full p-1 dark:bg-cyan-50/30"
             />
           </div>
-          <div className="flex flex-col items-center ml-2 text-primary">
+          <div className="flex flex-col items-center ml-3 text-primary">
             <h1 className={cn(allura.className, "bg-background text-6xl")}>
               H<span>ustle</span>
             </h1>

@@ -39,7 +39,7 @@ const Welcome = () => {
         <br />
         <p>Be sure to sign up to receive updates, new products, and newsletters.</p>
   
-        <EmailForm/>
+        {/* <EmailForm/> */}
         {/* <Popover>
           
         </Popover> */}
