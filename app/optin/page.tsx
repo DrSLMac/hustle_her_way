@@ -34,7 +34,7 @@ const Optin = () => {
             <p>
               Have you ever wanted to create a super profitable online business
               without holding inventory, creating products, dealing with
-              customers or wasting your time and money on things that just don't
+              customers or wasting your time and money on things that just don&apos;t
               work?
             </p>
             <br />
@@ -128,11 +128,3 @@ const Optin = () => {
 };
 
 export default Optin;
-
-{/* <form method="post" action="https://systeme.io/embedded/15250716/subscription"> 
-<input type=text name=email />
-  <div class="f-row">
-    <button type="submit" class="btn">Subscribe</button>
-  </div>
-  </form>
-   */}
