@@ -21,7 +21,6 @@ const ProductCard = ({
 }: productDetails) => {
   const [isShown, setIsShown] = useState(false);
   const [sneakPeak, setSneakPeak] = useState(false);
-  // const [y, setY] = useState(0);
 
   return (
     <div>
@@ -37,14 +36,13 @@ const ProductCard = ({
             className="relative"
           >
             {sneakPeak && isShown ? (
-              <>
-                <motion.div 
-                  animate={{ y: -20 }}
-                  transition={{ type: "spring"}}
-                  className="absolute flex items-center justify-center w-full h-[30%] bg-opacity-15 hover:bg-opacity-100 bg-gradient-to-b from-primary-foreground from-70% to-secondary-foreground text-muted text-center text-sm px-2 -bottom-5 z-0"
-                >
-                  Click for detailed view
-                </motion.div>
+              
+              <motion.div
+              initial={{ y: 10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -10, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              >
                 <Image
                   priority
                   src={urlFor(hoverImage).url()}
@@ -53,8 +51,15 @@ const ProductCard = ({
                   height={500}
                   className="rounded-t-lg object-cover bg-secondary-foreground "
                 />
-              </>
+              </motion.div>
+              
             ) : isShown && !sneakPeak ? (
+              <motion.div
+              initial={{ y: 10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -10, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+            >
               <Image
                 priority
                 src={urlFor(hoverImage).url()}
@@ -63,7 +68,14 @@ const ProductCard = ({
                 height={500}
                 className="rounded-t-lg object-cover bg-secondary-foreground "
               />
+                 </motion.div>
             ) : (
+              <motion.div
+            initial={{ y: 10, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -10, opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            >
               <Image
                 priority
                 src={urlFor(productImage).url()}
@@ -72,29 +84,20 @@ const ProductCard = ({
                 height={500}
                 className="rounded-t-lg object-cover bg-secondary-foreground"
               />
+              </motion.div>
             )}
-{/* 
-            {isShown ? (
-              <Image
-                priority
-                src={urlFor(hoverImage).url()}
-                alt="image"
-                width={500}
-                height={500}
-                className="rounded-t-lg h-[250px] object-cover bg-secondary-foreground hover:animate-fade-in animate-fade-out duration-500"
-              />
-            ) : (
-              <Image
-                priority
-                src={urlFor(productImage).url()}
-                alt="image"
-                width={500}
-                height={500}
-                className="rounded-t-lg h-[250px] object-cover sm:object-contain bg-secondary-foreground animate-fade-in hover:animate-fade-out duration-500"
-              />
-            )} */}
           </div>
-          <CardContent className="flex flex-col justify-between mt-1 px-2 h-32 sm:h-24 z-20">
+
+          <CardContent className="flex flex-col relative justify-between mt-1 h-32 sm:h-24">
+            {/* {sneakPeak && isShown &&
+              <motion.div 
+              className="absolute flex items-center rounded-t-md bg-opacity-15 text-muted text-center text-sm hover:bg-opacity-100 bg-gradient-to-b from-primary-foreground from-70% to-secondary-foreground p-2"
+              animate={{ y: -60 }}
+              transition={{ type: "spring"}}
+              >
+                Click for detailed view
+              </motion.div>
+            } */}
             <CardTitle className="text-center text-base leading-5">
               {title}
             </CardTitle>
