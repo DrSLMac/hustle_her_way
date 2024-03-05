@@ -1,10 +1,10 @@
-
 import React from "react";
 import { client } from "../../lib/sanity";
 import { Allura } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { productDetails } from "../../lib/interface";
 import ProductCard from "./ProductCard";
+import { motion } from "framer-motion";
 
 const allura = Allura({
   weight: ["400"],
@@ -49,7 +49,7 @@ export default async function ProductPreview() {
   });
 
   return (
-    <div className="mt-2">
+    <div className="mt-6">
       <h1
         className={cn(
           allura.className,
@@ -59,7 +59,8 @@ export default async function ProductPreview() {
         Featured Products...
       </h1>
 
-      <div className="grid grid-cols-3 gap-3">
+      <div className="flex justify-evenly gap-3">
+
         {productCards}
       </div>
     </div>

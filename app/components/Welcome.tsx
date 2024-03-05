@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useState } from "react";
 import { Allura } from "next/font/google";
 import { cn } from "@/lib/utils";
@@ -15,11 +15,9 @@ const allura = Allura({
 });
 
 const Welcome = () => {
-  const [userInput, setUserInput] = useState("")
+  const [userInput, setUserInput] = useState("");
 
-  const handleChange = () => {
-
-  }
+  const handleChange = () => {};
 
   return (
     <div>
@@ -37,36 +35,40 @@ const Welcome = () => {
           shop for digital printables, workbooks, and more.
         </p>
         <br />
-        <p>Be sure to sign up to receive updates, new products, and newsletters.</p>
-  
+        <p>
+          Be sure to sign up to receive updates, new products, and newsletters.
+        </p>
+
         {/* <EmailForm/> */}
         {/* <Popover>
           
         </Popover> */}
+        <br/>
         <p className="text-center">I&apos;m so glad you are here!</p>
 
         <div className="mt-4 flex justify-around ">
           <Link href="/articles">
-            <Button
+            <button
               type="submit"
-              className="px-1 gap-x-2 text-accent text-base uppercase hover:bg-secondary-foreground "
-            
+              className="inline-flex shadow-md uppercase items-center justify-center gap-x-2 rounded-md font-medium py-2 px-4 mt-2 bg-secondary-foreground text-primary transition-colors hover:bg-primary hover:text-secondary hover:shadow-3xl active:bg-primary-foreground disabled:pointer-events-none disabled:opacity-50"
             >
-              <div>Articles</div>
+              Articles
               <MoveRight />
-            </Button>
+            </button>
           </Link>
           <Link
             href="/"
             className="flex items-center gap-x-2 text-secondary font-semibold cursor-pointer uppercase text-base"
           >
-            <div>View Shop</div>
-            <div>
+            <button
+              type="submit"
+              className="inline-flex uppercase items-center justify-center gap-x-2 rounded-md font-medium py-2 px-4 mt-2 bg-transparent text-primary transition-colors hover:bg-primary hover:text-secondary hover:shadow-3xl active:bg-primary-foreground disabled:pointer-events-none disabled:opacity-50"
+            >
+              View Shop
               <MoveRight />
-            </div>
+            </button>
           </Link>
         </div>
-
       </div>
     </div>
   );

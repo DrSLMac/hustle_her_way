@@ -27,6 +27,31 @@ export default {
             title: 'Hover Image',
         },
         {
+            name: 'image2',
+            type: 'image',
+            title: 'Image Two',
+        },
+        {
+            name: 'image3',
+            type: 'image',
+            title: 'Image Three',
+        },
+        {
+            name: 'image4',
+            type: 'image',
+            title: 'Image Four',
+        },
+        {
+            name: 'image5',
+            type: 'image',
+            title: 'Image Five',
+        },
+        {
+            name: 'howitworks',
+            type: 'image',
+            title: 'How It Works',
+        },
+        {
             name: 'productDescription',
             type: 'text',
             title: 'Product Description',
